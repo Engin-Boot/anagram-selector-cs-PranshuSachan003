@@ -53,6 +53,8 @@ namespace Anagram
                 if(WordPairIsAnagram(word,candidates[i])==true)
                     listOfAnagramOfWord.Add(candidates[i]);
             }
+            for(int i=0;i<listOfAnagramOfWord.Count;i++)
+                Console.WriteLine(listOfAnagramOfWord[i]);
             return listOfAnagramOfWord;
         }
     }
