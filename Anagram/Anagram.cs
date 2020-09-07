@@ -5,6 +5,22 @@ namespace Anagram
 {
     public class AnagramSelector
     {
+        public bool lengthOfWordPairIsEqual(string word1, string word2)
+        {
+            if(word1.Length!=word2.Length)
+                return false;
+            else
+                return true;
+        }
+        public bool equalLengthWordPairIsAnagram(int[] count1, int[] count2)
+        {
+            for(int k=0;k<256;k++)
+                {
+                    if(count1[k]!=count2[k])
+                        return false;
+                }
+            return true;
+        }
         public bool WordPairIsAnagram(string word1, string word2) 
         {
             int[] count1 = new int[256];
@@ -13,18 +29,16 @@ namespace Anagram
                 count1[word1[i]-'a']++;
             for(int j=0;j<word2.Length;j++)
                 count2[word2[j]-'a']++;
-            if(word1.Length!=word2.Length)
+            if(lengthOfWordPairIsEqual(word1,word2)==false)
                 return false;
             else
             {
-                for(int k=0;k<256;k++)
-                {
-                    if(count1[k]!=count2[k])
-                        return false;
-                }
+                if(equalLengthWordPairIsAnagram(count1,count2)==true)
+                    return true;
+                else
+                    return false;
             }
             //Insert the correct implementation here
-            return true;
         }
         public List<string> SelectAnagrams(string word, List<string> candidates) 
         {
