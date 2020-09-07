@@ -9,7 +9,7 @@ namespace Anagram
         {
             int[] count = new int[256];
             for(int i=0;i<word.Length;i++)
-                count[word[i]-'a']++;
+                count[word[i]]++;
             return count;
         }
         public bool lengthOfWordPairIsEqual(string word1, string word2)
