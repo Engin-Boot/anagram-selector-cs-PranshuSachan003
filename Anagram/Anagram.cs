@@ -48,13 +48,13 @@ namespace Anagram
         public List<string> SelectAnagrams(string word, List<string> candidates) 
         {
             List<string> listOfAnagramOfWord = new List<string>();
+            string temp;
             for(int i=0;i<candidates.Count;i++)
             {
-                if(WordPairIsAnagram(word,candidates[i])==true)
-                    listOfAnagramOfWord.Add(candidates[i]);
+                temp = candidates[i];
+                if(WordPairIsAnagram(word,temp)==true)
+                    listOfAnagramOfWord.Add(temp);
             }
-            for(int i=0;i<listOfAnagramOfWord.Count;i++)
-                Console.WriteLine(listOfAnagramOfWord[i]);
             return listOfAnagramOfWord;
         }
     }
