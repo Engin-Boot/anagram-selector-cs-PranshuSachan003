@@ -9,8 +9,6 @@ namespace Anagram
         {
             int[] count1 = new int[256];
             int[] count2 = new int[256];
-            count1[256]={0};
-            count2[256]={0};
             for(int i=0;i<word1.Length;i++)
                 count1[word1[i]-'a']++;
             for(int j=0;j<word2.Length;j++)
