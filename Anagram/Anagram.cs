@@ -29,7 +29,7 @@ namespace Anagram
         public List<string> SelectAnagrams(string word, List<string> candidates) 
         {
             List<string> listOfAnagramOfWord = new List<string>();
-            for(int i=0;candidates.Count;i++)
+            for(int i=0;i<candidates.Count;i++)
             {
                 if(WordPairIsAnagram(word,candidates[i])==true)
                     listOfAnagramOfWord.Add(candidates[i]);
