@@ -5,6 +5,13 @@ namespace Anagram
 {
     public class AnagramSelector
     {
+        public int[] calculatingFrequencyOfLiteral(string word)
+        {
+            int[] count = new int[256];
+            for(int i=0;i<word.Length;i++)
+                count[word[i]-'a']++;
+            return count;
+        }
         public bool lengthOfWordPairIsEqual(string word1, string word2)
         {
             if(word1.Length!=word2.Length)
@@ -25,10 +32,8 @@ namespace Anagram
         {
             int[] count1 = new int[256];
             int[] count2 = new int[256];
-            for(int i=0;i<word1.Length;i++)
-                count1[word1[i]-'a']++;
-            for(int j=0;j<word2.Length;j++)
-                count2[word2[j]-'a']++;
+            count1 = calculatingFrequencyOfLiteral(word1);
+            count2 = calculatingFrequencyOfLiteral(word2);
             if(lengthOfWordPairIsEqual(word1,word2)==false)
                 return false;
             else
